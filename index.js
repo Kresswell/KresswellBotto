@@ -202,9 +202,9 @@ const starts = async riz => {
 					} else if (Number(args[0]) === 0) {
 						welcome.splice(from, 1)
 						fs.writeFileSync('../welcome.json', JSON.stringify(welcome))
-						reply('Sukses menonaktifkan fitur welcome di group ini ✔️')
+						reply('Successfully disabled welcome in this chat')
 					} else {
-						reply('1 untuk mengaktifkan, 0 untuk menonaktifkan')
+						reply('1 to enable, 0 to disable')
 					}
             }
             if (availableCommands.has(argv))
