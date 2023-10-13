@@ -142,11 +142,11 @@ const starts = async riz => {
                 Iv: 'Link tidak valid ❌',
                 mt: 'Command Dalam Tahap Perbaikan ❌',
                 only: {
-                    group: '❌ Perintah ini hanya bisa di gunakan dalam group! ❌',
-                    ownerG: '❌ Perintah ini hanya bisa di gunakan oleh owner group! ❌',
-                    ownerB: '❌ Perintah ini hanya bisa di gunakan oleh owner bot! ❌',
-                    admin: '❌ Perintah ini hanya bisa di gunakan oleh admin group! ❌',
-                    Badmin: '❌ Perintah ini hanya bisa di gunakan ketika bot menjadi admin! ❌'
+                    group: 'This is a group command dude!!',
+                    ownerG: 'Are you the owner of the group??',
+                    ownerB: 'It wont be good if My master knows that you were trying to use This command',
+                    admin: 'Only For Admins',
+                    Badmin: 'Only for Admins'
                 }
             }
             const reply = (teks) => {
@@ -165,7 +165,7 @@ const starts = async riz => {
             const isCmd = body.startsWith(prefix)
 
             const isBot = riz.user.jid
-            const owner = '6289630171792@s.whatsapp.net'  // replace owner number
+            const owner = '254798242085@s.whatsapp.net'  // replace owner number
             const groupMetadata = isGroup ? await riz.groupMetadata(from) : ''
             const groupName = isGroup ? groupMetadata.subject : ''
             const groupId   = isGroup ? groupMetadata.jid : ''
@@ -198,7 +198,7 @@ const starts = async riz => {
 						if (isWelcome) return reply('Udah aktif um')
 						welcome.push(from)
 						fs.writeFileSync('../welcome.json', JSON.stringify(welcome))
-						reply('Sukses mengaktifkan fitur welcome di group ini ✔️')
+						reply('Welcome successfully enabled in this chat.')
 					} else if (Number(args[0]) === 0) {
 						welcome.splice(from, 1)
 						fs.writeFileSync('../welcome.json', JSON.stringify(welcome))
